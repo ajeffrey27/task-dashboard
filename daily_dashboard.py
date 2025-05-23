@@ -78,7 +78,7 @@ if filtered_tasks:
         st.write(f"📝 **Notes**: _{notes or 'No notes provided.'}_")
         if st.button("Mark Complete", key=f"complete_{i}"):
             mark_task_completed(i)
-            try:
+try:
     st.experimental_rerun()
 except Exception as e:
     st.error(f"Oops, couldn't reload the app. Here's why: {e}")
