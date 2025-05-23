@@ -78,7 +78,10 @@ if filtered_tasks:
         st.write(f"📝 **Notes**: _{notes or 'No notes provided.'}_")
         if st.button("Mark Complete", key=f"complete_{i}"):
             mark_task_completed(i)
-            st.experimental_rerun()
+            try:
+    st.experimental_rerun()
+except Exception as e:
+    st.error(f"Oops, couldn't reload the app. Here's why: {e}")
 else:
     st.info("No tasks to display. Time to add some!")
 
