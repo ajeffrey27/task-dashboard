@@ -75,7 +75,7 @@ if filtered_tasks:
         col2.write(f"Category: `{category}`")
         col3.write(f"Due: `{due_date}`")
         col4.write(f"Recurring: `{recurrence.capitalize()}`" if recurrence != "none" else "One-Time Task")
-        st.write(f"📝 **Notes**: _{notes or 'No notes provided.'_}")
+        st.write(f"📝 **Notes**: _{notes or 'No notes provided.'}_")
         if st.button("Mark Complete", key=f"complete_{i}"):
             mark_task_completed(i)
             st.experimental_rerun()
